@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="CmdLineExec.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MainInit.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="DemoOne_demo1.cpp" />
+    <ClCompile Include="DemoOne_demo2.cpp" />
+    <ClCompile Include="DemoOne_demo3.cpp" />
+    <ClCompile Include="Parms.cpp" />
+    <ClCompile Include="TestOne_causal1.cpp" />
+    <ClCompile Include="TestOne_causal12.cpp" />
+    <ClCompile Include="TestOne_mem1.cpp" />
+    <ClCompile Include="TestOne_run1.cpp" />
+    <ClCompile Include="TestOne_run1deg.cpp" />
+    <ClCompile Include="TestOne_run2.cpp" />
+    <ClCompile Include="TestOne_run3.cpp" />
+    <ClCompile Include="TestOne_run4.cpp" />
+    <ClCompile Include="TestOne_run5.cpp" />
+    <ClCompile Include="TestOne_run6.cpp" />
+    <ClCompile Include="TestOne_run7.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CmdLineExec.h" />
+    <ClInclude Include="MainInit.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="DemoOne.h" />
+    <ClInclude Include="Parms.h" />
+    <ClInclude Include="TestOne.h" />
+  </ItemGroup>
+</Project>

@@ -7,6 +7,17 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DspLib", "DspLib\DspLib.vcxproj", "{CCFC2875-6793-4DB9-8650-F048D2846544}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HistoryTest", "HistoryTest\HistoryTest.vcxproj", "{257B2A87-4237-46BF-87E3-5DBAC5CBC809}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{4A7CBAE5-6B65-44BA-8F34-25B4095CBA41}"
+	ProjectSection(SolutionItems) = preProject
+		Files\ButterworthCo.txt = Files\ButterworthCo.txt
+		Files\Delay_Parms.txt = Files\Delay_Parms.txt
+		Files\FilterCo.txt = Files\FilterCo.txt
+		Files\History_Parms.txt = Files\History_Parms.txt
+		Files\Special_Parms.txt = Files\Special_Parms.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -51,6 +62,22 @@ Global
 		{CCFC2875-6793-4DB9-8650-F048D2846544}.Release|x64.Build.0 = Release|x64
 		{CCFC2875-6793-4DB9-8650-F048D2846544}.Release|x86.ActiveCfg = Release|x86
 		{CCFC2875-6793-4DB9-8650-F048D2846544}.Release|x86.Build.0 = Release|x86
+		{257B2A87-4237-46BF-87E3-5DBAC5CBC809}.Debug|ARM.ActiveCfg = Debug|ARM
+		{257B2A87-4237-46BF-87E3-5DBAC5CBC809}.Debug|ARM.Build.0 = Debug|ARM
+		{257B2A87-4237-46BF-87E3-5DBAC5CBC809}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{257B2A87-4237-46BF-87E3-5DBAC5CBC809}.Debug|ARM64.Build.0 = Debug|ARM64
+		{257B2A87-4237-46BF-87E3-5DBAC5CBC809}.Debug|x64.ActiveCfg = Debug|x64
+		{257B2A87-4237-46BF-87E3-5DBAC5CBC809}.Debug|x64.Build.0 = Debug|x64
+		{257B2A87-4237-46BF-87E3-5DBAC5CBC809}.Debug|x86.ActiveCfg = Debug|x86
+		{257B2A87-4237-46BF-87E3-5DBAC5CBC809}.Debug|x86.Build.0 = Debug|x86
+		{257B2A87-4237-46BF-87E3-5DBAC5CBC809}.Release|ARM.ActiveCfg = Release|ARM
+		{257B2A87-4237-46BF-87E3-5DBAC5CBC809}.Release|ARM.Build.0 = Release|ARM
+		{257B2A87-4237-46BF-87E3-5DBAC5CBC809}.Release|ARM64.ActiveCfg = Release|ARM64
+		{257B2A87-4237-46BF-87E3-5DBAC5CBC809}.Release|ARM64.Build.0 = Release|ARM64
+		{257B2A87-4237-46BF-87E3-5DBAC5CBC809}.Release|x64.ActiveCfg = Release|x64
+		{257B2A87-4237-46BF-87E3-5DBAC5CBC809}.Release|x64.Build.0 = Release|x64
+		{257B2A87-4237-46BF-87E3-5DBAC5CBC809}.Release|x86.ActiveCfg = Release|x86
+		{257B2A87-4237-46BF-87E3-5DBAC5CBC809}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
