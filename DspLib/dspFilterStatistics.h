@@ -1,5 +1,5 @@
-#ifndef _DSPFILTERSTATISTICS_H_
-#define _DSPFILTERSTATISTICS_H_
+#pragma once
+
 /*==============================================================================
 
 filters
@@ -17,93 +17,113 @@ namespace Dsp
 namespace Filter
 {
 
-   //******************************************************************************
-   //******************************************************************************
-   //******************************************************************************
-   // This filter characterizes an input signal by calculating expectations and
-   // uncertainties of the signal. It does this with a set of alpha filters.
+//******************************************************************************
+//******************************************************************************
+//******************************************************************************
+// This filter characterizes an input signal by calculating expectations and
+// uncertainties of the signal. It does this with a set of alpha filters.
 
-   class AlphaStatistics
-   {
-   public:
-      // Constructor
-      AlphaStatistics();
+class AlphaStatistics
+{
+public:
+   //***************************************************************************
+   //***************************************************************************
+   //***************************************************************************
+   // Members.
 
-      // Initialize
-      void initialize(double aAlpha);
+   // Output values.
+   double mX;          // Input value
+   double mEX;         // Expectation (mean)
+   double mUX;         // Uncertainty (standard deviation)
+   double mVariance;   // Variance
+   double mMean;       // Expectation (mean)
+   double mStdDev;     // Uncertainty (standard deviation)
 
-      // Put input value
-      void put(double aX);
+   // Alpha filters for expectation and uncertainty.
+   AlphaOne    mXAlpha;        // Alpha filter for input X
+   AlphaOne    mXSquareAlpha;  // Alpha filter for input X squared
 
-      // Output values
-      double mX;          // Input value
-      double mEX;         // Expectation (mean)
-      double mUX;         // Uncertainty (standard deviation)
-      double mVariance;   // Variance
-      double mMean;       // Expectation (mean)
-      double mStdDev;     // Uncertainty (standard deviation)
+   // Counter.
+   int  mK;
 
-      // Alpha filters for expectation and uncertainty
-      AlphaOne    mXAlpha;        // Alpha filter for input X
-      AlphaOne    mXSquareAlpha;  // Alpha filter for input X squared
+   //***************************************************************************
+   //***************************************************************************
+   //***************************************************************************
+   // Methods.
 
-      // Helpers
-      int  mK;
-      void show();
-   };
+   // Constructor.
+   AlphaStatistics();
 
-   //******************************************************************************
-   //******************************************************************************
-   //******************************************************************************
-   // This filter characterizes an input signal by calculating expectations and
-   // uncertainties of the signal. It does this on a periodic basis, given a fixed
-   // window size. For example, given a fixed window size of 1000, and an update
-   // rate of 1000 khz, this will produce new statisics once a second.
+   // Initialize.
+   void initialize(double aAlpha);
 
-   class PeriodicStatistics
-   {
-   public:
-      // Initialize
-      void initialize(int aSize);
-      void show();
+   // Put input value
+   void put(double aX);
 
-      // Put input value
-      void put(float aX);
+   // Helpers.
+   void show();
+};
 
-      // Members
-      int mSize;
-      bool mFirstFlag;
+//******************************************************************************
+//******************************************************************************
+//******************************************************************************
+// This filter characterizes an input signal by calculating expectations and
+// uncertainties of the signal. It does this on a periodic basis, given a fixed
+// window size. For example, given a fixed window size of 1000, and an update
+// rate of 1000 khz, this will produce new statisics once a second.
 
-      // Output values
-      bool   mEndOfPeriod;  // True at the end of a period
-      float  mX;            // Input value
-      float  mEX;           // expectation (mean)
-      float  mUX;           // uncertainty (standard deviation)
-      float  mMinX;         // minimum 
-      float  mMaxX;         // maximum
-      float  mMean;         // expectation (mean)
-      float  mStdDev;       // uncertainty (standard deviation)
+class PeriodicStatistics
+{
+public:
+   //***************************************************************************
+   //***************************************************************************
+   //***************************************************************************
+   // Members.
 
+   // Members.
+   int mSize;
+   bool mFirstFlag;
 
-      float  mEXSquare;     // expectation of X squared
-      float  mVariance;     // variance
+   // Output values.
+   bool   mEndOfPeriod;  // True at the end of a period
+   float  mX;            // Input value
+   float  mEX;           // expectation (mean)
+   float  mUX;           // uncertainty (standard deviation)
+   float  mMinX;         // minimum 
+   float  mMaxX;         // maximum
+   float  mMean;         // expectation (mean)
+   float  mStdDev;       // uncertainty (standard deviation)
 
-      // Sums for expectation and uncertainty
-      float  mXSum;         // Sum of X
-      float  mXSquareSum;   // Sum of X squared
-      int    mPutCount;     // Put count
+   float  mEXSquare;     // expectation of X squared
+   float  mVariance;     // variance
 
-      // Current min and max
-      float  mCurrentMinX;  // minimum
-      float  mCurrentMaxX;  // maximum
+   // Sums for expectation and uncertainty.
+   float  mXSum;         // Sum of X
+   float  mXSquareSum;   // Sum of X squared
+   int    mPutCount;     // Put count
 
+   // Current min and max.
+   float  mCurrentMinX;  // minimum
+   float  mCurrentMaxX;  // maximum
 
-      // Members
-      int mK;
-   };
+   // Counter.
+   int mK;
 
+   //***************************************************************************
+   //***************************************************************************
+   //***************************************************************************
+   // Methods.
+
+   // Initialize.
+   void initialize(int aSize);
+   void show();
+
+   // Put input value.
+   void put(float aX);
+};
+
+//******************************************************************************
+//******************************************************************************
+//******************************************************************************
 }//namespace
 }//namespace
-#endif
-
-
